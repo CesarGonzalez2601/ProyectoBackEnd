@@ -52,5 +52,15 @@ public class ClienteRestController {
 		this.clienteService.delete(currentCliente);
 	}
 
+	@PutMapping("/clientes/{id}")
+	@ResponseStatus(HttpStatus.CREATED)
+	public Cliente update(@RequestBody Cliente cliente, @PathVariable Long id) {
+		Cliente currentCliente = this.clienteService.findById(id);
+		currentCliente.setNombre(cliente.getNombre());
+		currentCliente.setApellido(cliente.getApellido());
+		currentCliente.setEmail(cliente.getEmail());
+		this.clienteService.save(currentCliente); asdasdsas
+		return currentCliente;
+	}
 
 }
