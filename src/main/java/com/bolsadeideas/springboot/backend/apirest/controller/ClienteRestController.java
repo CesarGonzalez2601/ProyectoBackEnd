@@ -45,7 +45,12 @@ public class ClienteRestController {
 		return cliente;
 	}
 
-
+	@DeleteMapping("/clientes/{id}")
+	@ResponseStatus(HttpStatus.NO_CONTENT)
+	public void delete(@PathVariable Long id) {
+		Cliente currentCliente = this.clienteService.findById(id);
+		this.clienteService.delete(currentCliente);
+	}
 
 
 }
