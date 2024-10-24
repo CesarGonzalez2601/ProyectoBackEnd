@@ -59,8 +59,8 @@ public class ClienteRestController {
 		currentCliente.setNombre(cliente.getNombre());
 		currentCliente.setApellido(cliente.getApellido());
 		currentCliente.setEmail(cliente.getEmail());
-		this.clienteService.save(currentCliente); asdasdsas
+		this.clienteService.save(currentCliente);
 		return currentCliente;
-	}
+	} 
 
 }
